@@ -9,10 +9,31 @@ const rl = readline.createInterface({
 
 
 function rockPaperScissors(hand1, hand2) {
+  hand1=hand1.toLowerCase();
+  hand2=hand2.toLowerCase();
+  hand1=(hand1.trim());
+  hand2=(hand2.trim());
 
-  // Write code here
-
+  if (hand1===hand2){
+    return 'It/s a Tie!';
+  }else if (hand1 === 'rock' && hand2 === 'scissors')  {
+    return 'Hand one wins!';
+  }else if (hand1 === 'rock' && hand2 === 'paper'){
+    return 'Hand two wins!';
+  }else if (hand1 === 'paper' && hand2 === 'rock'){
+    return 'Hand one wins!';
+  }else if (hand1 === 'paper' && hand2 === 'scissors'){
+    return 'Hand two wins!';
+  }else if (hand1 === 'scissors' && hand2 === 'paper'){
+    return 'Hand one wins!';
+  }else if (hand1 === 'scissors' && hand2 === 'rock'){
+    return 'Hand two wins!';
+  }else {
+    return 'BUT HER EMAILS! Give me some good input!';
+  }
 }
+
+
 
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
